@@ -1,0 +1,13 @@
+Search queries for malicious infrastructure
+To search for these malicious products and tags, you can use queries on the Shodan website or API. 
+Malicious product/activity 	Search query
+All known malware C2s	tag:malware
+Cobalt Strike Beacon	product:"Cobalt Strike Beacon"
+Brute Ratel C2	product:"brute ratel"
+Sliver C2	product:sliver
+Mythic C2	product:mythic
+DarkComet trojan	product:"DarkComet trojan"
+Gh0st RAT trojan	product:"Gh0st RAT trojan"
+NanoCore RAT trojan	product:"NanoCore RAT trojan"
+Remcos Pro RAT trojan	product:"Remcos Pro RAT trojan"
+Poison Ivy trojan	product:"Poison Ivy trojan"

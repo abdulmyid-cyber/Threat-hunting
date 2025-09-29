@@ -1,0 +1,72 @@
+Shodan queries that can be instrumental for threat hunters in identifying potentially compromised systems and malicious infrastructure. Each query is accompanied by a description of the tool or product it searches for, its typical applications, and its significance in the context of threat hunting.
+
+Shodan Queries for Threat Hunting
+Shodan Query	Tool/Product Category	Description for Threat Hunters
+product:"XtremeRAT"	Remote Access Trojan (RAT)	Identifies servers for XtremeRAT, a trojan enabling file manipulation, keylogging, and webcam access.
+product:"DarkComet"	Remote Access Trojan (RAT)	Finds servers for DarkComet RAT, offering remote desktop capture, password recovery, and network control.
+product:"Gh0st RAT"	Remote Access Trojan (RAT)	Locates Command and Control (C2) servers for Gh0st RAT, a well-known espionage trojan with many variants due to its public source code.
+product:"NanoCore RAT"	Remote Access Trojan (RAT)	Discovers C2 servers for NanoCore RAT, a modular trojan allowing attackers to add plugins for credential theft and spying.
+product:"Remcos Pro RAT"	Remote Access Trojan (RAT)	Identifies servers for Remcos (Remote Control & Surveillance), a commercial RAT often abused for keylogging and remote command execution.
+product:"njRAT"	Remote Access Trojan (RAT)	Finds control servers for the feature-rich njRAT, used to manage files, registry, and processes on infected systems.
+product:"Ares RAT"	Remote Access Trojan (RAT)	Searches for command and control servers for the Ares RAT.
+product:"Orcus RAT"	Remote Access Trojan (RAT)	Identifies servers for the Orcus RAT, which, although marketed as a legitimate tool, is often abused for its powerful remote control features.
+product:"AsyncRAT"	Remote Access Trojan (RAT)	Locates servers for AsyncRAT, an open-source RAT used to remotely monitor and control computers via an encrypted connection for data theft.
+product:"Quasar RAT"	Remote Access Trojan (RAT)	Discovers servers for Quasar RAT, an open-source remote administration tool for Windows that is frequently abused by threat actors.
+product:"DcRat"	Remote Access Trojan (RAT)	Locates servers for DcRat, an open-source RAT whose presence can often be confirmed by sending custom packets that elicit a specific response.
+product:"Cobalt Strike C2"	C2 / Adversary Emulation	One of the most critical queries, it identifies Cobalt Strike C2 servers, a popular adversary simulation tool heavily abused by ransomware and APT groups.
+product:"Metasploit"	C2 / Penetration Testing	Finds instances of the Metasploit Framework, a widely used penetration testing tool that can also be used for malicious post-exploitation activities.
+product:"Sliver C2"	C2 / Adversary Emulation	Discovers C2 servers for Sliver, an open-source, cross-platform alternative to Cobalt Strike used for adversary emulation.
+product:"Mythic"	C2 / Adversary Emulation	Locates Mythic C2 servers, a collaborative, cross-platform, post-exploit red teaming framework.
+product:"Panda C2"	Command and Control (C2)	Used to identify command and control servers for the Panda C2 framework.
+product:"Havoc C2"	C2 / Adversary Emulation	Identifies C2 servers for the Havoc C2 framework, a modern and sophisticated post-exploitation framework.
+product:"Covenant"	C2 / Adversary Emulation	Identifies servers running Covenant, a .NET C2 framework designed for collaborative red team operations.
+product:"Caldera"	C2 / Adversary Emulation	Finds instances of the Caldera framework, an open-source platform designed to automate adversary emulation and security testing.
+product:"NimPlant"	C2 / Post-Exploitation	Used to find command and control servers for NimPlant, a cross-platform post-exploitation tool written in Nim.
+product:"Brute Ratel C4"	C2 / Adversary Emulation	Identifies servers for Brute Ratel C4, an advanced adversarial attack simulation tool designed to evade detection by EDR and antivirus solutions.
+product:"Interactsh SMTP Server"	Security Testing / C2 Infra	Identifies Interactsh SMTP servers. Interactsh is an open-source tool for detecting out-of-band interactions, often used in security testing and exploitation.
+product:"Interactsh LDAP Server"	Security Testing / C2 Infra	Finds Interactsh LDAP servers, which can be part of the infrastructure used in security testing and identifying vulnerabilities like Log4j.
+product:"Interactsh HTTP Server"	Security Testing / C2 Infra	Identifies Interactsh HTTP servers, part of a toolset for detecting out-of-band interactions and finding vulnerabilities.
+product:"GoPhish"	Phishing Framework	Locates servers running GoPhish, an open-source framework used to create and manage phishing campaigns.
+product:"Hak5 Cloud C2"	C2 / Pentesting Hardware	Identifies instances of Hak5 Cloud C2, a platform for remotely managing Hak5 pentesting hardware and payloads.
+product:"BurpSuite"	Web Security Testing	Finds exposed instances of Burp Suite, a popular platform for web application security testing. These could indicate security assessments or malicious reconnaissance.
+product:"XMRig Monero Cryptominer"	Cryptominer	Locates devices running the XMRig miner. Its presence on servers often indicates a compromise where resources are being stolen for cryptocurrency mining.
+product:"ShadowPad"	Backdoor / Malware	Identifies C2 servers associated with ShadowPad, a modular backdoor used by sophisticated, often state-sponsored, threat actors for espionage.
+product:"PowerSploit"	Post-Exploitation	Finds evidence of PowerSploit, a collection of PowerShell modules used for penetration testing and post-exploitation activities.
+
+  
+Remote Access Trojans (RATs)
+Remote Access Trojans are a form of malware that allows an attacker to gain complete control over a victim's computer. Threat hunters can use the following queries to discover command and control (C2) servers for these RATs.
+product:"XtremeRAT": This query identifies servers running the XtremeRAT, a remote access trojan that allows for extensive control over an infected machine, including file manipulation, keylogging, and webcam access.
+product:"DarkComet": This searches for servers hosting the DarkComet RAT, a tool that provides a wide array of functionalities to remotely control a system, such as desktop capture, password recovery, and network functions.
+product:"Gh0st RAT": This query locates C2 servers for the Gh0st RAT, a well-known trojan primarily used for espionage and has been active for over a decade.[1][4][5][6][7] Its source code is publicly available, leading to numerous variants.
+product:"NanoCore RAT": Use this query to find C2 servers for the NanoCore RAT, a modular trojan that allows attackers to add various plugins to extend its capabilities, such as stealing credentials and spying on users.[8]
+product:"Remcos Pro RAT": This query helps in identifying servers for Remcos (Remote Control & Surveillance), a commercial RAT that is often used for malicious purposes, offering features like keylogging, screen recording, and remote command execution.
+product:"njRAT": This query is used to find servers controlling the njRAT, a prevalent and feature-rich trojan that can be used to manage files, registry, and processes on an infected system.[1][2]
+product:"Ares RAT": This will search for command and control servers for the Ares RAT.
+product:"Orcus RAT": This query identifies servers for the Orcus RAT, a trojan that, while marketed as a legitimate remote administration tool, is often abused by attackers for its powerful remote control features.
+product:"AsyncRAT": This query locates servers for AsyncRAT, an open-source remote access trojan used to remotely monitor and control computers through an encrypted connection.[10][11][12] Threat actors use its features like keylogging and screen recording to steal confidential data.
+product:"Quasar RAT": This query identifies servers running the Quasar RAT, a legitimate, open-source remote administration tool for Windows that is frequently used maliciously by APT actors for cyber espionage.
+product:"DcRat": This query helps locate servers for DcRat. Since AsyncRAT and DcRAT are open-source on Github, it is possible to identify them by sending custom packets that provoke a specific server response, reliably indicating the RAT you are facing.[16]
+Command and Control (C2) Frameworks
+C2 frameworks are toolkits used by both red teamers for penetration testing and malicious actors for managing compromised networks.
+product:"Cobalt Strike C2": This query is one of the most crucial for threat hunters. It identifies Cobalt Strike C2 servers, a popular adversary simulation tool heavily abused by various threat actors, including ransomware groups and APTs, for post-exploitation activities.
+product:"Metasploit": This query helps find instances of the Metasploit Framework, a widely used penetration testing tool that can also be used for malicious purposes.Shodan can be integrated with Metasploit to directly fire search queries from its console.[21]
+product:"Sliver C2": Use this to find command and control servers for Sliver, an open-source, cross-platform adversary emulation framework. It is a popular alternative to Cobalt Strike.
+product:"Mythic": This query locates Mythic C2 servers, a cross-platform, post-exploit red teaming framework designed for collaborative operations.[17][25]
+product:"Panda C2": This query is used to identify C2 servers for Panda C2.
+product:"Havoc C2": This query identifies command and control servers for the Havoc C2 framework.
+product:"Covenant": This query locates servers running Covenant, a .NET command and control framework that is designed to be a collaborative platform for red teamers.
+product:"Caldera": This will find instances of the Caldera framework, an open-source automated adversary emulation platform.
+product:"NimPlant": This query is used to find command and control servers for NimPlant.
+product:"Brute Ratel C4": This query identifies servers for Brute Ratel C4, a sophisticated adversarial attack simulation tool designed to evade detection by EDR and antivirus solutions.
+Other Malicious and Dual-Use Tools
+This category includes other tools that can be used for malicious activities, from phishing to cryptomining.
+product:"Interactsh SMTP Server": This query identifies instances of the Interactsh SMTP server. Interactsh is an open-source tool for detecting out-of-band interactions.
+product:"Interactsh LDAP Server": This query is used to find Interactsh LDAP servers, which can be used in various types of security testing and exploitation scenarios.
+product:"GoPhish": This will locate servers running GoPhish, an open-source phishing framework that allows users to easily create and manage phishing campaigns.
+product:"Hak5 Cloud C2": This will identify instances of the Hak5 Cloud C2, a platform for managing Hak5 pentesting tools.
+product:"BurpSuite": This query finds instances of Burp Suite, a popular platform for web application security testing. Exposed instances could be indicative of ongoing security assessments or potentially malicious activity.
+product:"Interactsh HTTP Server": This helps identify Interactsh HTTP servers, which are part of a toolset for detecting out-of-band interactions, often used in security testing to identify vulnerabilities.
+product:"XMRig Monero Cryptominer": This query locates devices running the XMRig Monero cryptominer. While it can be used legitimately, the presence of this software on servers can often indicate a compromise where system resources are being illicitly used for cryptocurrency mining.
+product:"ShadowPad": This query identifies servers associated with ShadowPad, a modular backdoor used by Chinese state-sponsored threat actors for espionage and financial gain.[26][27]
+product:"PowerSploit": This will find instances related to PowerSploit, a collection of PowerShell modules that can be used for penetration testing.
